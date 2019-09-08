@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+.heading{
+    border: 5px solid black;
+}
+
+.button{
+    margin-bottom: 10px; 
+    margin-left: 592px;
+    height: 40px;
+    background-color: rgb(83, 205, 221);
+    color: white;
+}

@@ -1,9 +1,36 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>OAuth 2.0 | Login</title>
-    </head>
-    <body>
-        <h1>Oauth 2.0 Login with Facebook</h1>
-        <button (onClick)="connectFB()">Login using Facebook</button>
-    </body>
+
+<head>
+    <title>OAuth 2.0 | Login</title>
+    <link rel = "stylesheet" href = "/views/myStyle.css" />
+</head>
+
+<body>
+    <h3>Secure Software Development - Assignment 02 | IT15147288 </h3>
+    <div class="heading">
+        <h1>OAuth 2.0 Login with Facebook</h1>
+        <button class="button" onclick="connectFB()">Login using Facebook</button>
+    </div>
+
+</body>
+
+<script>
+    function connectFB() {
+        var AUTH_ENDPOINT = "https://www.facebook.com/dialog/oauth";
+        var RESPONSE_TYPE = "code";
+        var CLIENT_ID = "233828744192179";
+        var REDIRECT_URI = "http://localhost:9000/FBOAuth";
+        var SCOPE = "public_profile email";
+
+        var requestEndpoint = AUTH_ENDPOINT + "?" +
+            "response_type=" + encodeURIComponent(RESPONSE_TYPE) + "&" +
+            "client_id=" + encodeURIComponent(CLIENT_ID) + "&" +
+            "redirect_uri=" + encodeURIComponent(REDIRECT_URI) + "&" +
+            "scope=" + encodeURIComponent(SCOPE);
+
+        window.location.href = requestEndpoint;
+    }
+</script>
+
 </html>
