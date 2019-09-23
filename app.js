@@ -3,19 +3,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 const FB = require('fb');
-
 const app = express();
 
 const HostName = "localhost";
-const AppID = "233828744192179";
-const AppSecretID = "0d6f63d9c8331fe98b868aeadf7b9b94";
+const AppID = "233828744192179"; //Generated App id key
+const AppSecretID = "0d6f63d9c8331fe98b868aeadf7b9b94"; //Generated secret key
 
 app.use(express.static("."));
 app.use(express.static(__dirname + "./views"));
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
 
-
+//Get login path -> index.html
 app.get('/login', (req, res, next) => {
     res.status(200).sendFile(__dirname + "/views/index.html");
 });
@@ -59,6 +58,7 @@ app.get("/FBOAuth", (req, res) => {
     }
 });
 
+//App listening to port 9000
 app.listen(9000, err => {
     if (err) {
         console.log(err);

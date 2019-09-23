@@ -2,26 +2,31 @@
 <html>
 
 <head>
+    <!-- Title -->
     <title>OAuth 2.0 | Login</title>
     <link rel = "stylesheet" href = "/views/myStyle.css" />
 </head>
 
 <body>
+    <!-- Body -->
     <h3>Secure Software Development - Assignment 02 | IT15147288 </h3>
     <div class="heading">
         <h1>OAuth 2.0 Login with Facebook</h1>
+        <p style="text-align: center">Enter username <input type="text"> </p>
+        <p style="text-align: center">Enter Password <input type="text"> </p>
         <button class="button" onclick="connectFB()">Login using Facebook</button>
     </div>
 
 </body>
 
 <script>
+    // Sends a request to Facebook OAuth API with the client and secret key we got 
     function connectFB() {
         var AUTH_ENDPOINT = "https://www.facebook.com/dialog/oauth";
         var RESPONSE_TYPE = "code";
-        var CLIENT_ID = "233828744192179";
-        var REDIRECT_URI = "http://localhost:9000/FBOAuth";
-        var SCOPE = "public_profile email";
+        var CLIENT_ID = "233828744192179"; //App id generated https://developers.facebook.com/
+        var REDIRECT_URI = "http://localhost:9000/FBOAuth";   //Come back to the current application after Login to Facebook
+        var SCOPE = "public_profile email"; //This field describes what field we need from the facebook -> public profile detail and email of the person 
 
         var requestEndpoint = AUTH_ENDPOINT + "?" +
             "response_type=" + encodeURIComponent(RESPONSE_TYPE) + "&" +
